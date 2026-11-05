@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Focus Desk – tasks and a focus timer</title>
+<meta name="description" content="Plan your tasks and work in focused sessions.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <h1>Focus Desk</h1>
+    <p>Pick one task. Start the timer. Finish it.</p>
+  </header>
+
+  <section class="timer" aria-label="Focus timer">
+    <div class="ring" id="ring">
+      <span id="clock" role="timer" aria-live="off">25:00</span>
+    </div>
+    <p id="current" class="current">No task selected</p>
+    <div class="modes" role="group" aria-label="Session length">
+      <button data-min="25" class="mode on">Focus 25</button>
+      <button data-min="5" class="mode">Break 5</button>
+      <button data-min="15" class="mode">Long break 15</button>
+    </div>
+    <div class="controls">
+      <button id="start" class="primary">Start</button>
+      <button id="reset">Reset</button>
+    </div>
+    <p class="count"><span id="done">0</span> focus sessions completed today</p>
+  </section>
+
+  <section class="tasks" aria-label="Tasks">
+    <form id="form">
+      <label for="input" class="sr">New task</label>
+      <input id="input" placeholder="What needs doing?" autocomplete="off" required>
+      <button class="primary" type="submit">Add task</button>
+    </form>
+    <div class="filters" role="group" aria-label="Filter tasks">
+      <button data-f="all" class="f on">All</button>
+      <button data-f="open" class="f">Open</button>
+      <button data-f="done" class="f">Done</button>
+    </div>
+    <ul id="list"></ul>
+    <p id="empty" class="empty" hidden>Nothing here. Add a task above to get started.</p>
+  </section>
+
+  <footer>Built with HTML, CSS and JavaScript. Data stays in your browser.</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
